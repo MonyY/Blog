@@ -1,57 +1,30 @@
-<template>
-  <div class="home">
-    <div class="wrapper">
-      <div class="avatar">
-        <img :src="$withBase(data.avatar)" alt="">
-      </div>
-      <div class="card">
-        <div class="bio">
-          <div class="head">
-            <span>
-              {{data.head}}
-            </span>
-          </div>
-          <div class="info">
-            <span>
-              {{data.info}}
-            </span>
-          </div>
-          <div class="description">
-            <Content/>
-          </div>
-        </div>
-        <div class="interests">
-          <span>
-            {{data.interests}}
-          </span>
-        </div>
-        <div class="socials">
-          <div v-for="item in data.socials">
-            <a :href="item.link" target="_blank">
-              <img :src="'/icons/'+item.title+'.svg'" :alt="item.title"
-              :title="item.title" />
-            </a>
-          </div>
-        </div>
-        <div class="actions">
-          <div v-for="item in data.actions">
-            <a :href="item.link" class="button"
-                :target="item.link.startsWith('/')?'':'_blank'">
-              {{item.text}}
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer" v-if="data.footer">
-        {{ data.footer }}
-      </div>
-    </div>
-  </div>
+<template lang="pug">
+  .home
+    .wrapper
+      transition(appear name="moveDown")
+        .avatar
+          img(:src="$withBase(data.avatar)" alt="我的照片而已")
+      transition(appear name="moveUp")
+        .card
+          .bio
+            .head
+              span {{data.head}}
+              br
+              span.spit {{data.spit}}😂
+            .info
+              span {{data.info}}
+            .description
+              Content
+          .interests
+            span {{data.interests}}
+      .footer(v-if="data.footer") {{ data.footer }}
 </template>
 
 <script>
 export default {
+  mounted() {
+    console.log(this.$page)
+  },
   computed: {
     data() {
       return this.$page.frontmatter;
@@ -107,6 +80,9 @@ body
       .head
         font-weight 700
         font-size 1.3em
+        .spit
+          font-weight normal
+          font-size 1rem
       .info
         padding-top 0.5rem
         font-size 1em
@@ -140,32 +116,11 @@ body
       flex-direction: row
       justify-content: center
       flex-wrap wrap
-      // padding 1em
-      .button
-        background-color $btnBgColor
-        border none
-        border-radius 0.3em
-        color white
-        padding 0.5em 1em
-        margin 1em 0.5em
-        font-size 1rem
-        font-family inherit
-        font-weight 400
-        text-align center
-        text-decoration none
-        display inline-block
-        -webkit-transition-duration 0.4s /* Safari */
-        transition-duration 0.4s
-        cursor pointer
-        &:hover
-          background-color $btnHvColor
   .footer
       padding 1rem
-      // border-top 1px solid lighten(#bdc3c7, 50%)
       font-weight 200
       font-size 1rem
       text-align center
       color lighten($footColor, 25%)
       margin-top auto
-
 </style>
