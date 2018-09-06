@@ -3,7 +3,7 @@
     .wrapper
       transition(appear name="moveDown")
         .avatar
-          img(:src="$withBase(data.avatar)" alt="我的照片而已")
+          img(src="https://monyy.github.io/Mony/me.jpeg" alt="我的照片而已")
       transition(appear name="moveUp")
         .card
           .bio
@@ -15,16 +15,11 @@
               span {{data.info}}
             .description
               Content
-          .interests
-            span {{data.interests}}
       .footer(v-if="data.footer") {{ data.footer }}
 </template>
 
 <script>
 export default {
-  mounted() {
-    console.log(this.$page)
-  },
   computed: {
     data() {
       return this.$page.frontmatter;
@@ -35,7 +30,6 @@ export default {
 
 <style lang="stylus">
 @import './styles/config.styl'
-
 body
   .home
     max-width 100%
@@ -62,7 +56,7 @@ body
       width 100%
       height auto
       max-width 150px
-      border-radius 500rem
+      border-radius 5rem
   .card
     max-width: 600px
     width 100%
