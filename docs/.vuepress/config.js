@@ -1,5 +1,5 @@
 module.exports = {
-  title: "郁世昌的博客",
+  title: "Mony | 郁世昌",
   description: "说点什么好呢...",
   head: [
     ["link", { rel: "icon", href: `/logo.png` }]
@@ -11,21 +11,13 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: "首页", link: "/" },
-      { text: "见闻", link: "/projects/" },
+      { text: "见闻", link: "/information/" },
       { text: "积累", link: "/guide/" }
     ],
     sidebar: {
       '/guide/': genSidebarConfig('Guide')
     },
-    lastUpdated: '最后更新时间'
-  },
-
-  markdown: {
-    // options for markdown-it-anchor
-    anchor: { permalink: false },
-    config: md => {
-      md.use(require("markdown-it-katex"));
-    }
+    lastUpdated: 'Last Time'
   }
 };
 
