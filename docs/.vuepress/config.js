@@ -4,7 +4,7 @@ module.exports = {
   head: [
     ["link", { rel: "icon", href: `/logo.png` }]
   ],
-  base: "/",
+  base: "/Mony/",
   dest: "./dist",
   evergreen: true,
   ga: 'UA-125337358-1',
