@@ -1,21 +1,23 @@
 module.exports = {
-  title: "Harry Potter",
-  description: "The description of the site.",
-  head: [["link", { rel: "icon", href: `/logo.png` }]],
+  title: "郁世昌的博客",
+  description: "说点什么好呢...",
+  head: [
+    ["link", { rel: "icon", href: `/logo.png` }]
+  ],
   base: "/",
   dest: "./dist",
-
+  evergreen: true,
+  ga: 'UA-125337358-1',
   themeConfig: {
     nav: [
-      { text: "Home", link: "/" },
-      { text: "Projects", link: "/projects/" },
-      { text: "Guide", link: "/guide/" },
-      { text: "GitHub", link: "https://github.com/mtobeiyf/vuepress-homepage" }
+      { text: "首页", link: "/" },
+      { text: "见闻", link: "/projects/" },
+      { text: "积累", link: "/guide/" }
     ],
     sidebar: {
       '/guide/': genSidebarConfig('Guide')
     },
-    lastUpdated: 'Last Updated'
+    lastUpdated: '最后更新时间'
   },
 
   markdown: {
@@ -27,18 +29,15 @@ module.exports = {
   }
 };
 
-function genSidebarConfig (title) {
-  return [
-    {
-      title,
-      collapsable: false,
-      children: [
-        '',
-        'getting-started',
-        'customize',
-        'advanced',
-      ]
-    }
-  ]
+function genSidebarConfig(title) {
+  return [{
+    title,
+    collapsable: false,
+    children: [
+      '',
+      'getting-started',
+      'customize',
+      'advanced',
+    ]
+  }]
 }
-
