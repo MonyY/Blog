@@ -117,4 +117,20 @@ body
       text-align center
       color lighten($footColor, 25%)
       margin-top auto
+// 动画
+.moveDown-enter-active, .moveDown-leave-active
+  opacity 1
+  transition all 1s
+
+.moveDown-enter, .moveDown-leave-to
+  transform translateY(-40px)
+  opacity 0
+
+.moveUp-enter-active, .moveUp-leave-active
+  opacity 1
+  transition all 1s
+
+.moveUp-enter, .moveUp-leave-to
+  transform translateY(40px)
+  opacity 0
 </style>
