@@ -1,4 +1,4 @@
-# Advanced
+# Vue
 
 If my template can't meet your requirement, you can further create your own template.
 

@@ -8,10 +8,12 @@ footer: Made with ♥ by Yu. Powered by VuePress
 ---
 
 ---
-  #### 基本信息
+::: tip 基本信息
   - 工作: 前端工程师
   - 生日: 1992.10.08
   - 现居住地: 成都
   - 手机: 13071080845
   - [Github](https://github.com/MonyY)
   - [个人博客](https://monyy.github.io/Mony/)
+:::
+[[toc]]

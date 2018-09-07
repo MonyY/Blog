@@ -14,10 +14,21 @@ module.exports = {
       { text: "见闻", link: "/information/" },
       { text: "积累", link: "/guide/" }
     ],
+    // sidebar: {
+    //   '/guide/': genSidebarConfig('Guide')
+    // },
     sidebar: {
-      '/guide/': genSidebarConfig('Guide')
+      '/guide/': [
+        '',
+        'js',
+        'css',
+        'vue'
+      ],
+      '/information/': [
+        ''
+      ]
     },
-    lastUpdated: 'Last Time'
+    lastUpdated: 'Last Updated'
   }
 };
 
