@@ -28,7 +28,7 @@ export default {
 };
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 @import './styles/config.styl'
 body
   .home
@@ -46,7 +46,6 @@ body
   width 100%
   display: flex
   flex-direction column
-  // justify-content: center
   align-items center
   .avatar 
     position relative
@@ -90,26 +89,6 @@ body
           -webkit-margin-after 0em
           a
             font-weight normal
-    .interests
-      padding 1em 1.5em
-      border-top 1px solid rgba(34,36,38,.1)
-    .socials
-      border-top 1px solid rgba(34,36,38,.1)
-      display flex
-      flex-direction: row
-      // align-items: center
-      justify-content: center
-      flex-wrap wrap 
-      img 
-        width 32px
-        margin 1em
-        cursor pointer
-    .actions
-      border-top 1px solid rgba(34,36,38,.1)
-      display flex
-      flex-direction: row
-      justify-content: center
-      flex-wrap wrap
   .footer
       padding 1rem
       font-weight 200
