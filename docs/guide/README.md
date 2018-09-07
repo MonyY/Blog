@@ -1,17 +1,28 @@
-# Introduction
+# HTTP协议
 
-This is a skeleton built for generating static site for yourself, especially helpful and friendly to students, teachers, developers, researchers and so on.
+## URI-URL和URN
 
-It's suitable for building your personal homepage with:
-- About me :raising_hand:
-- Projects, publications, portfolio :books:
-- Biography, timeline, resume(CV) :page_with_curl: 
+::: tip URI
+- 统一资源标志符
+- 用来标识互联网上的信息资源
+- 包括`URL`和`URN`
+:::
 
-## Features
-- Markdown and emoji supported :smiley:
-- Elegant and minimalistic
-- Customizable and mobile-friendly
-- Multi-language support
-- Powered by [VuePress](https://vuepress.vuejs.org/) and [Vue.js](https://vuejs.org/)
+::: tip URL
+- 统一资源定位器
+``` http
+https://host.com:80/path?query=string#hash
+```
+- http://  协议
+- host.com 用来定位资源的服务器在互联网中的位置(可以是IP 也可以是 域名)
+- 默认80端口    每台物理服务器可以跑很多软件的web服务，端口就是监听物理服务器上面某个具体的web服务
+- /path路由 web 服务器里面的内容可以通过路由进行定位
+- ?query=string 搜索参数
+- #hash    查找文档的某个片段
+:::
 
-Now, let's try it :point_right:
+::: tip URN
+- 永久统一资源定位符
+- 在资源移动后还能被找到
+- 目前应用并不广泛
+:::
