@@ -1,8 +1,8 @@
 module.exports = {
-  title: "Mony | 郁世昌",
+  title: "Mony",
   description: "说点什么好呢...",
   head: [
-    ["link", { rel: "icon", href: `/logo.png` }]
+    ["link", { rel: "icon", href: `/logo.jpg` }]
   ],
   base: "/Mony/",
   dest: "./dist",
