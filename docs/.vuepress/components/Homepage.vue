@@ -90,12 +90,12 @@ body
           a
             font-weight normal
   .footer
-      padding 1rem
-      font-weight 200
-      font-size 1rem
-      text-align center
-      color lighten($footColor, 25%)
-      margin-top auto
+    padding 1rem
+    font-weight 200
+    font-size 1rem
+    text-align center
+    color lighten($footColor, 25%)
+    margin-top auto
 // 动画
 .moveDown-enter-active, .moveDown-leave-active
   opacity 1
