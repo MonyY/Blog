@@ -11,36 +11,29 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: "首页", link: "/" },
-      { text: "见闻", link: "/information/" },
-      { text: "积累", link: "/guide/" }
+      { text: "积累", link: "/HTTP/HTTP协议" }
     ],
-    // sidebar: {
-    //   '/guide/': genSidebarConfig('Guide')
-    // },
-    sidebar: {
-      '/guide/': [
-        '',
-        'js',
-        'css',
-        'vue'
-      ],
-      '/information/': [
-        ''
+    sidebar: [{
+      title: 'HTTP',
+      children: [
+        '/HTTP/HTTP协议'
       ]
-    },
+    }, {
+      title: 'JS',
+      children: [
+        '/JS/JS-basic-knowledge'
+      ]
+    }, {
+      title: 'Vue',
+      children: [
+        '/Vue/'
+      ]
+    }, {
+      title: 'CSS',
+      children: [
+        '/CSS/'
+      ]
+    }],
     lastUpdated: 'Last Updated'
   }
 };
-
-function genSidebarConfig(title) {
-  return [{
-    title,
-    collapsable: false,
-    children: [
-      '',
-      'getting-started',
-      'customize',
-      'advanced',
-    ]
-  }]
-}

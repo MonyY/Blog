@@ -16,4 +16,3 @@ footer: Made with ♥ by Yu. Powered by VuePress
   - [Github](https://github.com/MonyY)
   - [个人博客](https://monyy.github.io/Mony/)
 :::
-[[toc]]
