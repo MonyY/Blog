@@ -34,6 +34,9 @@ module.exports = {
         '/CSS/'
       ]
     }],
+    markdown: {
+      lineNumbers: true
+    },
     lastUpdated: 'Last Updated'
   }
 };
