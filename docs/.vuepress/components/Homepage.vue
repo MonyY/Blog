@@ -22,7 +22,7 @@
 export default {
   computed: {
     data() {
-      return this.$page.frontmatter;
+      return this.$page.frontmatter
     }
   }
 };
@@ -44,7 +44,7 @@ body
       padding 1rem 0.5rem
 .wrapper
   width 100%
-  display: flex
+  display flex
   flex-direction column
   align-items center
   .avatar 

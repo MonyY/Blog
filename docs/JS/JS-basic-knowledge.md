@@ -124,3 +124,75 @@ t[2](); //2
 	```
   3. 实现封装，属性私有化。
   4. 模块化开发，防止污染全局变量。
+
+## New操作符
+::: tip 过程
+1. 创建一个空对象，并且 this 引用该对象，同时还继承了该函数的原型。
+2. this.name 这种属性和方法被加入到 this 引用的对象中。
+3. 该函数有return,如果有，但是返回值是基本类型(Number,String,Boolean,undefined,null)时，会忽略掉此return并返回this(this引用的对象),如果返回值是引用类型(对象)，则返回该对象，this会被忽略
+4. 该函数没有return,则默认返回this引用的对象 
+:::
+
+
+## 继承
+1. 原型继承。
+    - 过多继承无关属性。
+2. 借用构造函数。(最常见)
+	  - 不能继承构造函数原型。
+	  - 每次构造函数要多执行一个方法。
+```js
+function Person(name, age, sex) {
+	this.name = name;
+	this.age = age;
+	this.sex = sex;
+}
+function Student(name, age, sex, grade) {
+	Person.call(this, name, age, sex);
+	this.grade = grade;
+}
+let student = new Student()
+```
+3. 共有原型。
+	  - 不能随意修改自己的原型。
+```js
+function Father() {}
+function Son() {}
+function inherit(target, origin) {
+	target.prototype = origin.prototype;
+}
+inherit(Son, Father)
+let son = new Son()
+```
+4. 圣杯模式。
+```js
+let inherit = (function() {
+	let F = function() {};
+	return function(target, origin){
+		F.prototype = origin.prototype;
+		target.prototype = new F();
+		target.prototype.constuctor = target;
+		// 真正继承自谁
+		target.prototype.uber = origin.prototype;
+	}
+})();
+```
+
+## 深克隆
+```js
+function deepClone(origin, target = {}) {
+	let target = target;
+	let toStr = Object.prototype.toString;
+	let arrStr = '[Object Array]';
+	for(let prop in origin) {
+		if(origin.hasOwnPrototype(prop)){
+			if(origin[prop] !== 'null' && typeof(origin[prop]) === 'object'){
+				target[prop] = toStr.call(typeof(origin[prop])) === arrStr ? [] : {};
+				deepClone(origin[prop], target[prop]);
+			} else {
+				target[prop] = origin[prop];
+			}
+		}
+	}
+	return target
+}
+```
