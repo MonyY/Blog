@@ -32,10 +32,10 @@ fn(1); // fun a; undefined; 234; 123; 123; fun;
 (function(){/* code */}());
 (function(){/* code */})();
 
-var result = (function () { 
+var result = (function () {
 	var name = "Barry"; 
 	return name; 
-})(); 
+})();
 // IIFE 执行后返回的结果：
 result; // "Barry"
 ```
