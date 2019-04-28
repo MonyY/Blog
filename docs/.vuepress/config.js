@@ -14,7 +14,7 @@ module.exports = {
 	evergreen: true,
 	ga: 'UA-125337358-1',
 	themeConfig: {
-		nav: [{ text: '首页', link: '/' }, { text: '积累', link: '/HTTP/HTTP协议' }],
+		nav: [{ text: '首页', link: '/' }, { text: '积累', link: '/HTTP/HTTP' }],
 		sidebar: [
 			{
 				title: 'HTTP',
